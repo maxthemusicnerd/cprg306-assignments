@@ -77,7 +77,6 @@ const item1 = {
 
   return (
     <div>
-      <h2 className="text-black">Shopping List</h2>
       {items.map((item, index) => (
         <Item key={index} {...item} />
       ))}
