@@ -12,7 +12,7 @@ export default {
         foreground: "var(--foreground)",
       },
       boxShadow: {
-        'glow': '0 0 30px rgba(0, 255, 255, 0.7)', // Aqua glow (adjust color and spread as needed)
+        'glow': '0 0 30px rgba(0, 255, 255, 0.7)',
       },
     },
   },
