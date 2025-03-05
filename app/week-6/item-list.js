@@ -10,9 +10,10 @@ export default function ItemList() {
 
 
   useEffect(() => {
-    setItems(prev => [...prev].sort((a, b) => a[sortBy].localeCompare(b[sortBy])));
+    setItems([...list].toSorted((a, b) => a[sortBy] > b[sortBy] ? 1 : a[sortBy] < b[sortBy] ? -1 : 0));
   }, [sortBy]);
 
+  
 
   function buttonClick() {
     if(sortBy === "name") {
