@@ -24,7 +24,10 @@ export default function MealIdeas( {ingredient} ) {
 
     async function loadMealIdeas(ingredient) {
         let mealIdea = await fetchMealIdeas(ingredient);
-        setMeals(prev => prev = mealIdea)
+        if (mealIdea) {setMeals(prev => prev = mealIdea)} else {
+            setMeals([])
+        }
+        
     }
 
     return(
