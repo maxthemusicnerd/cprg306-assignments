@@ -2,7 +2,7 @@
 import Item from "./item.js"; 
 import { useState, useEffect } from 'react';
 
-export default function ItemList( { itemList, onItemSelect }) {
+export default function ItemList( { itemList }) {
 
   const [sortBy, setSortBy] = useState("name");
   const [items, setItems ]= useState(itemList);
@@ -25,7 +25,7 @@ export default function ItemList( { itemList, onItemSelect }) {
       <button className="rounded-xl bg-blue-500 p-4 m-8" onClick={buttonClick}>Sort by: {sortBy}</button>
       <div>
         {items.map((item, index) => (
-          <Item key={index} {...item} onSelect={() => {onItemSelect(item)}}/>
+          <Item key={index} {...item}/>
         ))}
       </div>
     </div>
