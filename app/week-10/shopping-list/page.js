@@ -13,7 +13,7 @@ export default function Page() {
     const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
 
     const [listofItems, setListOfItems] = useState([])
-    const [selectedItemName, setSelectedItemName] = useState("chicken");
+    const [selectedItemName, setSelectedItemName] = useState(null);
 
     function handleAddItems(anItem) {
         let itemId = addItem(user.uid, anItem)
@@ -33,7 +33,8 @@ export default function Page() {
 
     const loadItems = async () => {
         if (user) { 
-            const items = await getItems(user.id); 
+            console.log("loading items!")
+            const items = await getItems(user.uid); 
             setListOfItems(items || []); 
         }
     };

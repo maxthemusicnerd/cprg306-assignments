@@ -13,6 +13,8 @@ export const getItems = async (userId) => {
             ...doc.data()
         }));
 
+        console.log("it work?", items)
+
         return items;
     } catch (error) {
         console.log("Error in Firestore:", error);
